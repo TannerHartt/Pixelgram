@@ -8,6 +8,7 @@ buildscript {
 					username System.getenv('NX_USR')
 					password System.getenv('NX_PSW')
 				}
+
 			}
 		}
 		dependencies {
@@ -34,6 +35,7 @@ if (System.getenv('NX_USR') != null) {
 ext {
 	springCloudVersion = 'Hoxton.SR10'
 }
+
 group = 'com.cognizant'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
@@ -41,6 +43,7 @@ sourceCompatibility = '11'
 repositories {
 	mavenCentral()
 }
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -56,7 +59,6 @@ dependencies {
 
 	//mockito test
 	testImplementation('org.mockito:mockito-junit-jupiter')
-
 }
 
 // More of Alan's Plugin to get it working.
@@ -94,6 +96,7 @@ sonarqube {
 		property "sonar.exclusions", "**/model/**"
 	}
 }
+
 // Turn on jacoco xml report generation. Sonar 2.8+ uses xml jacoco reports for the quality assurance check
 jacocoTestReport {
 	reports {
