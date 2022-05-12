@@ -18,3 +18,5 @@ spring:
 # Anything that goes here is made specifically for local's profile.
 spring:
   profiles: local, default
+  jpa:
+    defer-datasource-initialization: true
