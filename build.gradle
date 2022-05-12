@@ -1,6 +1,6 @@
 // Alan's Check For Rebase Plugin
 buildscript {
-	if (System.getenv('SPRING_PROFILES_ACTIVE') != 'local') {
+	if (System.getenv('NX_USR') != null) {
 		repositories {
 			maven {
 				url 'https://enablement-nexus.work.cognizant.studio/repository/maven-releases'
@@ -27,7 +27,7 @@ plugins {
 	id "org.sonarqube" version "3.1.1"
 }
 
-if (System.getenv('SPRING_PROFILES_ACTIVE') != 'local') {
+if (System.getenv('NX_USR') != null) {
 	apply plugin: com.cognizant.cde.GitlabMergeVerificationPlugin
 }
 
@@ -62,7 +62,7 @@ dependencies {
 }
 
 // More of Alan's Plugin to get it working.
-if (System.getenv('SPRING_PROFILES_ACTIVE') != 'local') {
+if (System.getenv('NX_USR') != null) {
 	verifyMergeRequest {
 		gitlabUrl = GITLAB_URL
 		gitlabApiToken = API_TOKEN
