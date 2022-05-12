@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test --code-coverage",
-    "sonar": "sonar-scanner"
+    "sonar": "sonar-scanner",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
