@@ -29,7 +29,7 @@ Note: this may be outdated.
 * General Playlist: https://cognizant.kpoint.com/app/video/gcc-d803dfff-1816-452f-8ae8-8b4335c3b751?playlist=8344
 * Shariq's intro to GCP & Docker w/Pipeline prerequisites: https://cognizant.kpoint.com/app/video/gcc-ab3ef80f-98b0-4f7e-a93b-3048f1afd9e6?playlist=8344
 * For those working on UI, how to get Spring-Cloud-Gateway working: https://cognizant.kpoint.com/app/video/gcc-6f80aba0-d057-454b-8a7c-e2d75be62b1c?playlist=8344
-* Demo of TDD with Spring Controller: https://cognizant.kpoint.com/app/video/gcc-abe852c0-ae3d-44ae-8341-febfcbbe143c?playlist=8344
+* Demo of TDD with Spring Controller: https://cognizant.kpoint.com/web/playlists/pl-41e8a309-7c5f-4f4f-a14c-f56a2ac85db2?op=play&video_id=gcc-abe852c0-ae3d-44ae-8341-febfcbbe143c&serial_number=3
 * Demo of TDD everywhere in a Angular Project: https://cognizant.kpoint.com/app/video/gcc-d1ab47cb-0399-439e-808b-6c3127d94e4e?playlist=8344
 
 ### Udemy
