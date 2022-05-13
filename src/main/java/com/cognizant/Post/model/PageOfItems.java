@@ -10,9 +10,9 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 
-public class PageOfItems<T> {
+public class PageOfItems<Post> {
     //small change
-    List<T> items;
+    List<Post> items;
     boolean hasNext;
     int totalElements;
 
