@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { PostComponent } from '../components/post/post.component';
+import { Feed2Component } from './feed2/feed2.component';
 
 @NgModule({
  imports: [
@@ -10,7 +11,8 @@ import { PostComponent } from '../components/post/post.component';
   ],
   declarations: [
     AppComponent,
-    PostComponent
+    PostComponent,
+    Feed2Component
   ],
   providers: [],
   bootstrap: [AppComponent]
