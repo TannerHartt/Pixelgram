@@ -1,6 +1,11 @@
 <div class="container full-width">
   <ul class="list">
-    <li class="bordered" *ngFor="let image of images()">
+    <li *ngFor="post of posts()">
+      <!-- Display the post -->>
+    </li>
+
+
+<!--    <li class="bordered" *ngFor="let image of images()">
       <app-image
         [image]="image"
         [user]="image.userId | user | async"
@@ -9,7 +14,7 @@
         (deleteAction)="onDeleteAction($event)"
       >
       </app-image>
-    </li>
+    </li>-->
   </ul>
 
   <button
