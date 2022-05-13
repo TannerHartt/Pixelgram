@@ -17,3 +17,6 @@ server:
 spring:
   profiles: local
 
+server:
+  port:
+
