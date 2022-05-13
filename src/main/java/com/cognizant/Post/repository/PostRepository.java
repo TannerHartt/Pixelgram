@@ -11,7 +11,6 @@ import java.util.List;
 
 @Repository
 public interface PostRepository extends JpaRepository<Post, Long> {
-    Pageable fivePost = PageRequest.of(0,5);
 
 
 }
