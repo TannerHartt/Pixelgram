@@ -33,7 +33,7 @@ if (System.getenv('NX_USR') != null) {
 
 // Extensions or Variables to use throughout the build.gradle
 ext {
-	springCloudVersion = 'Hoxton.SR10'
+	springCloudVersion = '2020.0.4'
 }
 
 group = 'com.cognizant'
@@ -47,7 +47,7 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE'
+	//implementation 'org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE'
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:2.2.5.RELEASE'
 	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -61,6 +61,9 @@ dependencies {
 
 	//mockito test
 	testImplementation('org.mockito:mockito-junit-jupiter')
+
+	//wiremock for feign client testing
+	testImplementation 'com.github.tomakehurst:wiremock-jre8:2.33.2'
 }
 
 // More of Alan's Plugin to get it working.
