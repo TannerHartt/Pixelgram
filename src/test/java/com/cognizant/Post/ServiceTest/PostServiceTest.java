@@ -64,7 +64,7 @@ public class PostServiceTest {
         pageOfItems = new PageOfItems(postList, true, 6);
 
     }
-
+// Orignal Test
    /* @Test
     public void isGetPageItems() {
         ArrayList<Post> postArrayList = new ArrayList<Post>();
