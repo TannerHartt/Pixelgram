@@ -5,6 +5,7 @@ import com.cognizant.Post.controllers.PostController;
 import com.cognizant.Post.model.PageOfItems;
 import com.cognizant.Post.model.Post;
 import com.cognizant.Post.repository.PostRepository;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -31,6 +32,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
@@ -52,7 +54,7 @@ public class PostControllerTest {
 
     @BeforeEach
     public void setup() {
-        postController = new PostController();
+        postController = new PostController(service);
         MockitoAnnotations.openMocks(this);
         post = new Post(1, 1, "img1", "Cool pic", LocalDate.of(2022, 5, 12));
     }
@@ -76,5 +78,29 @@ public class PostControllerTest {
         mvc.perform(MockMvcRequestBuilders.get("/posts?pageNumber=0&pageSize=4"))
                 .andDo(print())
                 .andExpect(MockMvcResultMatchers.status().isOk());
+    }
+
+    @Test
+    public void getPosts_notNullTest(){
+        int pageNumber = 0;
+        int pageSize = 5;
+        List<Post> postList = new ArrayList<>();
+        postList.add(post);
+        PageOfItems<Post> postPage = new PageOfItems<>();
+        postPage.setItems(postList);
+        Assertions.assertNotNull(postController.getPosts(pageNumber, pageSize));
+    }
+
+    @Test
+    public void getPageOfPosts_returnPageOfPosts(){
+        int pageNumber= 0;
+        int pageSize = 5;
+        List<Post> postList = new ArrayList<>();
+        postList.add(post);
+        PageOfItems<Post> postPage = new PageOfItems<>();
+        postPage.setItems(postList);
+        postController = new PostController(service);
+        postController.getPosts(pageNumber,pageSize);
+        verify(service).getAllPost(pageNumber, pageSize);
     }
 }
