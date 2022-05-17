@@ -4,7 +4,6 @@ spring:
     name: capybaras-fems
 
 POST_URL: 10.115.6.117
-
 ---
 # Anything that goes here is made specifically for clouds's profile.
 # Cloud is the default profile that Google Clound Foundry makes your application use if you do not override it.
@@ -13,8 +12,8 @@ spring:
 
 server:
   port: 8080
-  postCrud:
-    POST_URL: http://10.115.6.117
+postCrud:
+  POST_URL: http://10.115.6.117
 
 ---
 # Anything that goes here is made specifically for local's profile.
