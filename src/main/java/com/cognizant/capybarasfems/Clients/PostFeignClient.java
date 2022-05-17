@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 //Needs value of Post-CRUD and corresponding Post URL
-@FeignClient(value = "postCrud", url = "${POST_URL}")
+@FeignClient(value = "postCrud", url = "${postCrud.POST_URL}")
 public interface PostFeignClient {
     //
     @GetMapping("/posts?pageNumber={int}&pageSize={int})")
