@@ -4,7 +4,6 @@ import { stringify } from '@angular/compiler/src/util';
 import { Observable } from 'rxjs';
 //import { PageOfItems } from '../models/pageofitems';
 //import { Post } from '../models/post'
-import { Post } from 'src/models/post';
 
 
 @Injectable({
@@ -18,7 +17,7 @@ export class PostuiserviceService {
    *  the url as private baseURL = "URL of the method" and thats it and we can work on the functions
    *  together.
   */
-  private baseURL = "http://35.202.176.28/"
+  private baseURL = "http://35.202.49.153/"
 
   constructor(private http: HttpClient) { }
 
