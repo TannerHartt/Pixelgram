@@ -88,6 +88,7 @@ public class PostControllerTest {
         postList.add(post);
         PageOfItems<Post> postPage = new PageOfItems<>();
         postPage.setItems(postList);
+        when(service.getAllPost(pageNumber,pageSize)).thenReturn(postPage);
         Assertions.assertNotNull(postController.getPosts(pageNumber, pageSize));
     }
 
@@ -99,8 +100,8 @@ public class PostControllerTest {
         postList.add(post);
         PageOfItems<Post> postPage = new PageOfItems<>();
         postPage.setItems(postList);
-        postController = new PostController(service);
-        postController.getPosts(pageNumber,pageSize);
+        when(service.getAllPost(pageNumber,pageSize)).thenReturn(postPage);
+        System.out.println(postController.getPosts(pageNumber,pageSize));
         verify(service).getAllPost(pageNumber, pageSize);
     }
 }
