@@ -2,9 +2,8 @@
 spring:
   application:
     name: capybaras-fems
-    post-crud:
-      POST_URL: http://10.115.6.117
 
+POST_URL: 10.115.6.117
 
 ---
 # Anything that goes here is made specifically for clouds's profile.
