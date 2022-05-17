@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { stringify } from '@angular/compiler/src/util';
 import { Observable } from 'rxjs';
-import { PageOfItems } from '../models/pageofitems';
-import { Post } from '../models/post'
+//import { PageOfItems } from '../models/pageofitems';
+//import { Post } from '../models/post'
 
 
 @Injectable({
@@ -29,7 +29,5 @@ export class PostuiserviceService {
     const params = `?pageNumber=${pageNumber}&pageSize=${pageSize}`
 
     return this.http.get<any>("???????????????"+params);
-
-
-  
+  } 
 }
