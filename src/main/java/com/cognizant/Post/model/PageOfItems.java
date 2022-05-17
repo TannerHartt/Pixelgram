@@ -20,6 +20,5 @@ public class PageOfItems<T> {
 
 
     public void isHasNext(boolean hasNext) {
-        this.hasNext = hasNext;
     }
 }
