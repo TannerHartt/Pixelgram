@@ -3,7 +3,6 @@ spring:
   application:
     name: capybaras-fems
 
-POST_URL: 10.115.6.117
 ---
 # Anything that goes here is made specifically for clouds's profile.
 # Cloud is the default profile that Google Clound Foundry makes your application use if you do not override it.
