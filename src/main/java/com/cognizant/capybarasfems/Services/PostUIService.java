@@ -15,6 +15,9 @@ public class PostUIService implements UIService {
     @Autowired
     PostFeignClient client;
 
+    public PostUIService() {
+    }
+
     public PostUIService(PostFeignClient client) {
         this.client = client;
     }
