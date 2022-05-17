@@ -15,15 +15,15 @@ public class PostUIController {
     @Autowired
     private PostUIService postUIService;
 
-    public PostUIController(PostUIService postUIService){
-       this.postUIService = postUIService;
+    public PostUIController(PostUIService postUIService) {
+        this.postUIService = postUIService;
     }
 
-    @GetMapping(value = "/?pageNumber={int}&pageSize={int}")
-   public PageOfItems<PostUI> getByPostId(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize){
-      PageOfItems<PostUI> page = postUIService.getPostPage(pageNumber, pageSize);
-      return page;
-   }
+    @GetMapping()
+    public PageOfItems<PostUI> getByPostId(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize) {
+        PageOfItems<PostUI> page = postUIService.getPostPage(pageNumber, pageSize);
+        return page;
+    }
 /*
 "/posts?pageNumber={int}&pageSize={int}"
 PageOfItems<T> {
