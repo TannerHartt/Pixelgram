@@ -11,5 +11,4 @@ public class CapybarasFemsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CapybarasFemsApplication.class, args);
 	}
-
 }
