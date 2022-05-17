@@ -5,13 +5,19 @@ import com.cognizant.capybarasfems.Models.PageOfItems;
 import com.cognizant.capybarasfems.Models.Post;
 import com.cognizant.capybarasfems.Models.PostUI;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class PostUIService implements UIService {
     @Autowired
     PostFeignClient client;
+
+    public PostUIService(PostFeignClient client) {
+        this.client = client;
+    }
 
     @Override
     public PageOfItems<PostUI> getPostPage(int pageNumber, int pageSize) {

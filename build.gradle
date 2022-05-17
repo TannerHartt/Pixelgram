@@ -61,9 +61,6 @@ dependencies {
 
 	//mockito test
 	testImplementation('org.mockito:mockito-junit-jupiter')
-
-	//wiremock for feign client testing
-	testImplementation 'com.github.tomakehurst:wiremock-jre8:2.33.2'
 }
 
 // More of Alan's Plugin to get it working.
