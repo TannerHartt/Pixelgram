@@ -4,6 +4,7 @@ import { stringify } from '@angular/compiler/src/util';
 import { Observable } from 'rxjs';
 //import { PageOfItems } from '../models/pageofitems';
 //import { Post } from '../models/post'
+import { Post } from 'src/models/post';
 
 
 @Injectable({
