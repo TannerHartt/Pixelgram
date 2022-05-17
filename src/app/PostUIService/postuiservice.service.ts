@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { stringify } from '@angular/compiler/src/util';
+import { Observable } from 'rxjs';
+import { PageOfItems } from '../models/pageofitems';
+import { Post } from '../models/post'
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +21,15 @@ export class PostuiserviceService {
 
   constructor(private http: HttpClient) { }
 
-  /**
-   * When they get the controller up we need to match each function to the function in the controller
-  */
+  fetchListOfPosts():Observable<any> {
+    return this.http.get<any>("??????????????????");
+  }
+
+  fetchPagedPosts(pageNumber: number, pageSize: number):Observable<any> {
+    const params = `?pageNumber=${pageNumber}&pageSize=${pageSize}`
+
+    return this.http.get<any>("???????????????"+params);
+
+
+  
 }
