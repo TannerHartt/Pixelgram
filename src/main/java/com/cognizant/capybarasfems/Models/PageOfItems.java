@@ -13,6 +13,8 @@ public class PageOfItems<T> {
         this.totalElements = totalElements;
     }
 
+    public PageOfItems(){}
+
     public List<T> getItems() {
         return items;
     }
