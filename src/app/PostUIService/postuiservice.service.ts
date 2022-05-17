@@ -17,17 +17,17 @@ export class PostuiserviceService {
    *  the url as private baseURL = "URL of the method" and thats it and we can work on the functions
    *  together.
   */
-  private baseURL = ""
+  private baseURL = "http://35.202.176.28/"
 
   constructor(private http: HttpClient) { }
 
   fetchListOfPosts():Observable<any> {
-    return this.http.get<any>("??????????????????");
+    return this.http.get<any>(this.baseURL);
   }
 
   fetchPagedPosts(pageNumber: number, pageSize: number):Observable<any> {
     const params = `?pageNumber=${pageNumber}&pageSize=${pageSize}`
 
-    return this.http.get<any>("???????????????"+params);
+    return this.http.get<any>(this.baseURL + params);
   } 
 }
