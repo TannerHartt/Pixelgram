@@ -12,7 +12,7 @@ spring:
 server:
   port: 8080
 postCrud:
-  POST_URL: http://10.115.6.117
+  POST_URL: http://35.202.176.28
 
 ---
 # Anything that goes here is made specifically for local's profile.
