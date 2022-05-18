@@ -13,7 +13,8 @@ server:
   port: 8080
 postCrud:
   POST_URL: http://35.202.176.28
-
+commentCrud:
+  COMMENT_URL: http://35.224.220.204
 ---
 # Anything that goes here is made specifically for local's profile.
 spring:

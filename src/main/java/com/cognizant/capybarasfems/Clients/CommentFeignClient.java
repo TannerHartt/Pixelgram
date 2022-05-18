@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(value = "commentCrud", url= "${commentCrud.COMMENT_URL}")
 public interface CommentFeignClient {
     @GetMapping("/posts/{postId}/comments?pageNumber={pageNumber}&pageSize={pageSize}")
-    PageOfItems<Comment>getComment(@PathVariable int postId, @PathVariable int pageNumber, @PathVariable int pageSize);
+    PageOfItems<Comment>getComment(@PathVariable long postId, @PathVariable int pageNumber, @PathVariable int pageSize);
 }
