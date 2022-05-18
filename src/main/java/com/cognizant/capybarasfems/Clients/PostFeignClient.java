@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(value = "postCrud", url = "${postCrud.POST_URL}")
 public interface PostFeignClient {
     //
-    @GetMapping("/posts?pageNumber={int}&pageSize={int})")
+    @GetMapping("/posts?pageNumber={int}&pageSize={int}")
     PageOfItems<Post> getPost(@PathVariable int pageNumber, @PathVariable int pageSize);
 
     //Sends Post from PostController
