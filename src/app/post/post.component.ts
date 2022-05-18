@@ -13,11 +13,10 @@ export class PostComponent implements OnInit {
   constructor(private postServiceService: PostServiceService) { 
     this.postServiceService = postServiceService;
   }
-
   
   User = new User();
-
   Post = new Post();
+  
   ngOnInit(): void {
   }
 
