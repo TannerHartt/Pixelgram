@@ -24,6 +24,9 @@ public class PostUIController {
         PageOfItems<PostUI> page = postUIService.getPostPage(pageNumber, pageSize);
         return page;
     }
+
+
+
 /*
 "/posts?pageNumber={int}&pageSize={int}"
 PageOfItems<T> {

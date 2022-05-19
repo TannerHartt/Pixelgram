@@ -5,5 +5,5 @@ import com.cognizant.capybarasfems.Models.PageOfItems;
 
 public interface CommentServiceInterface {
 
-    PageOfItems<Comment> getComment(long postId, int pageNumber, int pageSize);
+    PageOfItems<Comment> getComment(int postId, int pageNumber, int pageSize);
 }

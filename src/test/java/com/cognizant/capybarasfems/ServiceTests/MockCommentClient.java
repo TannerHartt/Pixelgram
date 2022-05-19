@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class MockCommentClient implements CommentFeignClient {
     @Override
-    public PageOfItems<Comment> getComment(long postId, int pageNumber, int pageSize) {
+    public PageOfItems<Comment> getComment(int postId, int pageNumber, int pageSize) {
         ArrayList<Comment> commentList = new ArrayList<>();
         commentList.add(new Comment(1, 5, "user1", "body1", LocalDate.now()));
         commentList.add(new Comment(2, 5, "user1", "body2", LocalDate.now()));

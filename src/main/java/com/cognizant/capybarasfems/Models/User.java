@@ -1,21 +1,21 @@
 package com.cognizant.capybarasfems.Models;
 
 public class User {
-    private long id;
+    private int id;
     private String username;
     private String profileImg;
 
-    public User(long id, String username, String profileImg) {
+    public User(int id, String username, String profileImg) {
         this.id = id;
         this.username = username;
         this.profileImg = profileImg;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

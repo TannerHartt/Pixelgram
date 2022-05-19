@@ -23,7 +23,7 @@ public class CommentService implements CommentServiceInterface{
     }
 
     @Override
-    public PageOfItems<Comment> getComment(long postId, int pageNumber, int pageSize){
+    public PageOfItems<Comment> getComment(int postId, int pageNumber, int pageSize){
        PageOfItems<Comment> commentCrudPage = commentFeignClient.getComment(postId, pageNumber, pageSize);
 
         PageOfItems<Comment> commentPage = new PageOfItems<>(

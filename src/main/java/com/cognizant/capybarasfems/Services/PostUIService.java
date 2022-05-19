@@ -1,6 +1,8 @@
 package com.cognizant.capybarasfems.Services;
 
+import com.cognizant.capybarasfems.Clients.CommentFeignClient;
 import com.cognizant.capybarasfems.Clients.PostFeignClient;
+import com.cognizant.capybarasfems.Models.Comment;
 import com.cognizant.capybarasfems.Models.PageOfItems;
 import com.cognizant.capybarasfems.Models.Post;
 import com.cognizant.capybarasfems.Models.PostUI;
@@ -15,11 +17,20 @@ public class PostUIService implements UIService {
     @Autowired
     PostFeignClient client;
 
+    @Autowired
+    CommentFeignClient commentFeignClient;
+
+    @Autowired
+    CommentService commentService;
+
     public PostUIService() {
     }
 
-    public PostUIService(PostFeignClient client) {
+    public PostUIService(PostFeignClient client, CommentFeignClient commentFeignClient, CommentService commentService) {
         this.client = client;
+        this.commentService = commentService;
+        this.commentFeignClient = commentFeignClient;
+
     }
 
     @Override
@@ -34,7 +45,7 @@ public class PostUIService implements UIService {
 
         List<PostUI> uiPosts = new ArrayList<>();
         for (Post p : crudPage.getItems()) {
-            PostUI translated = new PostUI(p, null);
+            PostUI translated = new PostUI(p, commentService.getComment(p.getId(), pageNumber, pageSize));
             uiPosts.add(translated);
         }
 
@@ -42,3 +53,4 @@ public class PostUIService implements UIService {
         return uiPage;
     }
 }
+
