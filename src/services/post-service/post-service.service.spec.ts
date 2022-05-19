@@ -54,7 +54,6 @@ describe('PostServiceService', () => {
       hasNext: false,
       totalElements: 0
     }
-
     let post: Post = {
       id: 0,
       user: user1,

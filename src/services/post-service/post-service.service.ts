@@ -19,7 +19,6 @@ export class PostServiceService {
   }
 
   fetchPagedPosts(post: Post, pageNumber: number, pageSize: number):Observable<PageOfItems<Post>> {
-
     return this.http.get<PageOfItems<Post>>(`${this.baseURL}/${post.id}/comments?pageNumber=${pageNumber}&pageSize=${pageSize}`);
   } 
 }
