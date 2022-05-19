@@ -3,13 +3,13 @@ package com.cognizant.capybarasfems.Models;
 import java.time.LocalDate;
 
 public class Post {
-    private long id;
-    private long userId;
+    private int id;
+    private int userId;
     private String img;
     private String description;
     private LocalDate createdOn;
 
-    public Post(long id, long userId, String img, String description, LocalDate createdOn) {
+    public Post(int id, int userId, String img, String description, LocalDate createdOn) {
         this.id = id;
         this.userId = userId;
         this.img = img;
@@ -17,19 +17,19 @@ public class Post {
         this.createdOn = createdOn;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public long getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
