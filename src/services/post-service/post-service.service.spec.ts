@@ -12,7 +12,8 @@ describe('PostServiceService', () => {
   let httpTestingController: HttpTestingController;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports:[HttpClientTestingModule]
+      imports:[HttpClientTestingModule],
+      providers:[HttpClientTestingModule]
     });
     service = TestBed.inject(PostServiceService);
     httpTestingController = TestBed.inject(HttpTestingController);

@@ -10,9 +10,7 @@ import { PostServiceService } from 'src/services/post-service/post-service.servi
 })
 export class PostComponent implements OnInit {
 
-  constructor(private postServiceService: PostServiceService) { 
-    this.postServiceService = postServiceService;
-  }
+  constructor() { }
   
   User = new User();
   Post = new Post();
