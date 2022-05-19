@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Post } from 'src/models/post';
+import { PageOfItems } from 'src/models/page-of-item';
 
 
 
@@ -8,17 +10,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PostServiceService {
-  private baseURL = "http://35.202.176.28/posts"
+  private baseURL = "http://34.72.139.183/posts"
 
   constructor(private http: HttpClient) { }
 
-  fetchListOfPosts():Observable<any> {
-    return this.http.get<any>(this.baseURL);
+  fetchListOfPosts(pageNumber: number, pageSize: number):Observable<PageOfItems<Post>> {
+    return this.http.get<PageOfItems<Post>>(`${this.baseURL}?pageNumber={${pageNumber}}&pageSize={${pageSize}}`);
   }
 
-  fetchPagedPosts(pageNumber: number, pageSize: number):Observable<any> {
-    const params = `?pageNumber=${pageNumber}&pageSize=${pageSize}`
+  fetchPagedPosts(post: Post, pageNumber: number, pageSize: number):Observable<any> {
 
-    return this.http.get<any>(this.baseURL + params);
+    return this.http.get<PageOfItems<Post>>(`${this.baseURL}/${post.id}/comments?pageNumber=${pageNumber}&pageSize=${pageSize}`);
   } 
 }
