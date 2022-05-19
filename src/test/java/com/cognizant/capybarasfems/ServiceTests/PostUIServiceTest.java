@@ -45,7 +45,7 @@ public class PostUIServiceTest {
         list.add(new Post(1, 1, "image1", "descr 1", LocalDate.of(2022, 1, 1)));
         PageOfItems<Post> pageOfPosts = new PageOfItems<Post>(list,false,1);
         PageOfItems<Comment> pageOfComments = new PageOfItems<Comment>(commentList, false, 1);
-        //Mockito.doReturn(commentList).when(commentService).getComment(5,1,5);
+        
         when(commentService.getComment(1,1,5)).thenReturn(pageOfComments);
         when(postFeignClient.getPost(1,5)).thenReturn(pageOfPosts);
         PageOfItems<PostUI> result = service.getPostPage(1, 5);

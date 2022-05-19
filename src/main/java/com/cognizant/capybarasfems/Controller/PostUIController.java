@@ -1,29 +1,46 @@
 package com.cognizant.capybarasfems.Controller;
 
+import com.cognizant.capybarasfems.Models.Comment;
 import com.cognizant.capybarasfems.Models.PageOfItems;
 import com.cognizant.capybarasfems.Models.PostUI;
+import com.cognizant.capybarasfems.Services.CommentService;
 import com.cognizant.capybarasfems.Services.PostUIService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/posts")
+@RequestMapping("/")
 public class PostUIController {
     @Autowired
     private PostUIService postUIService;
 
-    public PostUIController(PostUIService postUIService) {
+    @Autowired
+    private CommentService commentService;
+
+    public PostUIController(PostUIService postUIService, CommentService commentService) {
         this.postUIService = postUIService;
+        this.commentService = commentService;
     }
 
-    @GetMapping()
-    public PageOfItems<PostUI> getByPostId(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize) {
+    @GetMapping("/posts")
+    public PageOfItems<PostUI> getPost(@RequestParam("pNum") int pageNumber, @RequestParam("pSize") int pageSize) {
         PageOfItems<PostUI> page = postUIService.getPostPage(pageNumber, pageSize);
         return page;
     }
+
+    @GetMapping("/comments")
+    public PageOfItems<Comment> getCommentByPostID(@RequestParam("pId") int postId, @RequestParam("pNum") int pageNumber, @RequestParam("pSize") int pageSize){
+        PageOfItems<Comment> comment = commentService.getComment(postId, pageNumber, pageSize);
+        return comment;
+    }
+
+    @GetMapping("/posts/{pId}/comments")
+    public PageOfItems<PostUI> getByPostIdComment(@PathVariable("pId") int postId, @RequestParam("pNum") int pageNumber, @RequestParam("pSize") int pageSize) {
+        PageOfItems<PostUI> pageId = postUIService.getPostPage(pageNumber, pageSize);
+        return pageId;
+    }
+}
+
 
 
 
@@ -35,4 +52,3 @@ PageOfItems<T> {
     totalElements: int
 }
  */
-}
