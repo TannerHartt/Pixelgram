@@ -9,6 +9,7 @@ import { PageOfItems } from 'src/models/page-of-item';
 @Injectable({
   providedIn: 'root'
 })
+
 export class PostServiceService {
   private baseURL = "http://34.72.139.183/posts"
 
