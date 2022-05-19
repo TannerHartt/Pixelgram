@@ -15,10 +15,10 @@ export class PostServiceService {
   constructor(private http: HttpClient) { }
 
   fetchListOfPosts(pageNumber: number, pageSize: number):Observable<PageOfItems<Post>> {
-    return this.http.get<PageOfItems<Post>>(`${this.baseURL}?pageNumber={${pageNumber}}&pageSize={${pageSize}}`);
+    return this.http.get<PageOfItems<Post>>(`${this.baseURL}?pageNumber=${pageNumber}&pageSize=${pageSize}`);
   }
 
-  fetchPagedPosts(post: Post, pageNumber: number, pageSize: number):Observable<any> {
+  fetchPagedPosts(post: Post, pageNumber: number, pageSize: number):Observable<PageOfItems<Post>> {
 
     return this.http.get<PageOfItems<Post>>(`${this.baseURL}/${post.id}/comments?pageNumber=${pageNumber}&pageSize=${pageSize}`);
   } 
