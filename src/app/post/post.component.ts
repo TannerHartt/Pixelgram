@@ -1,7 +1,7 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { PageOfItems } from 'src/models/page-of-item';
-import { Post } from 'src/models/post';
+import { PostUI } from 'src/models/PostUI';
 import { User } from 'src/models/user';
 import { PostServiceService } from 'src/services/post-service/post-service.service';
 
@@ -13,50 +13,24 @@ import { PostServiceService } from 'src/services/post-service/post-service.servi
 export class PostComponent implements OnInit {
 
   User = new User();
-  Post = new Post();
-
-  posts!: Post[];
+  postData = new PageOfItems<PostUI>();
 
   constructor(private postServiceService: PostServiceService) { 
-    this.postServiceService = postServiceService;
-  }
-   postService!: PostServiceService
-
-   
   
-
-    user1: User = {
-      id: 0,
-      username: " ",
-      profileImg: " ",
-    } 
-
-    commentPage: PageOfItems<Comment> = {
-      items: [],
-      hasNext: false,
-      totalElements: 0
-    }
-
-    post: Post = {
-      id: 0,
-      user: this.user1,
-      img: " ",
-      description: " ",
-      createdOn: new Date(),
-      comments: []
-    }
-    pageNumber!: number;
-    pageSize!: number;
-
-    
-
+  }
+    pageNumber: number = 0;
+    pageSize: number = 5;
   
   ngOnInit(): void {
-    this.fetchPagedPosts();
+    this.getPost();
   }
 
-
-  this.postService.fetchPagedPosts()
-  
+  public getPost() {
+    this.postServiceService.fetchListOfPosts(this.pageNumber, this.pageSize).subscribe(data => {
+      this.postData = data;
+      console.log(this.postData.items);
+    });
+    
+  }
 
 }
