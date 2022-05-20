@@ -145,3 +145,8 @@ position: relative;
 left: 75%;
 bottom: 25%;
 }
+
+.deletePost:hover {
+  background-color: rgba(44, 43, 43, 0.19);
+  cursor: pointer;
+}
