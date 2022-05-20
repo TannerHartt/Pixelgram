@@ -8,6 +8,7 @@ import com.cognizant.capybarasfems.Services.PostUIService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/")
 public class PostUIController {
