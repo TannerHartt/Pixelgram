@@ -22,8 +22,8 @@ public class CommentController {
     }
 
     @GetMapping
-    public PageOfItems<Comment> getComment(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize){
-        return service.getAllComment(pageNumber, pageSize);
+    public PageOfItems<Comment> getComment(@RequestParam("postId") int postId, @RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize){
+        return service.getAllComment(postId, pageNumber, pageSize);
     }
 
 }

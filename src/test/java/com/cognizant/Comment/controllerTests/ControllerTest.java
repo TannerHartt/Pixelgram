@@ -52,12 +52,13 @@ public class ControllerTest {
     public void getComments_notNullTest() {
         int pageNumber = 0;
         int pageSize = 5;
+        int postId = 1;
         List<Comment> commentList = new ArrayList<>();
         commentList.add(comment);
         PageOfItems<Comment> commentPage = new PageOfItems<>();
         commentPage.setItems(commentList);
-        when(service.getAllComment(pageNumber, pageSize)).thenReturn(commentPage);
-        Assertions.assertNotNull(commentController);
+        when(service.getAllComment(postId, pageNumber, pageSize)).thenReturn(commentPage);
+        Assertions.assertNotNull(commentController.getComment(postId, pageNumber, pageSize));
     }
 
     @Test
@@ -66,22 +67,22 @@ public class ControllerTest {
         List<Comment> commentList = new ArrayList<>();
         commentList.add(comment);
         commentPage.setItems(commentList);
-        when(service.getAllComment(0,4)).thenReturn(commentPage);
+        when(service.getAllComment(1,0,4)).thenReturn(commentPage);
 
         mvc.perform(MockMvcRequestBuilders.get("/comments?postId=1&pageNumber=0&pageSize=5"));
     }
 
     @Test
     public void getPageofComments_returnPageOfComments() {
-        int pageNumber =0;
+        int pageNumber = 0;
         int pageSize = 5;
+        int postId = 1;
         List<Comment> commentList = new ArrayList<>();
         commentList.add(comment);
         PageOfItems<Comment> commentPage = new PageOfItems<>();
         commentPage.setItems(commentList);
-        when(service.getAllComment(pageNumber, pageSize)).thenReturn(commentPage);
-        //needs to post id passed in as well !!
-        commentController.getComment(pageNumber, pageSize);
-        verify(service).getAllComment(pageNumber, pageSize);
+        when(service.getAllComment(postId, pageNumber, pageSize)).thenReturn(commentPage);
+        commentController.getComment(postId, pageNumber, pageSize);
+        verify(service).getAllComment(postId, pageNumber, pageSize);
     }
 }

@@ -17,9 +17,9 @@ public class CommentService implements CommentServiceInterface {
     CommentRepo commentRepo;
 
     @Override
-    public PageOfItems<Comment> getAllComment(int pageNumber, int pageSize) {
+    public PageOfItems<Comment> getAllComment(int postId, int pageNumber, int pageSize) {
         PageOfItems<Comment> pageOfItems = new PageOfItems<>();
-        Page<Comment> pageResult = getCommentPage(pageNumber, pageSize);
+        Page<Comment> pageResult = getCommentPage(postId, pageNumber, pageSize);
         pageOfItems.setItems(pageResult.toList());
         pageOfItems.setHasNext(pageResult.hasNext());
         pageOfItems.setTotalElements((int) pageResult.getTotalElements());
@@ -27,9 +27,9 @@ public class CommentService implements CommentServiceInterface {
     }
 
     @Override
-    public Page<Comment> getCommentPage(int pageNumber, int pageSize) {
+    public Page<Comment> getCommentPage(int postId, int pageNumber, int pageSize) {
         PageRequest fiveComments = PageRequest.of(pageNumber, pageSize);
-        return commentRepo.findAll(fiveComments);
+        return commentRepo.findByPostId(postId, fiveComments);
     }
 
     @Override

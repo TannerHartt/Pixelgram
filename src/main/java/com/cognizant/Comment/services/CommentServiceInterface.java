@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface CommentServiceInterface {
-    PageOfItems<Comment> getAllComment(int pageNumber, int pageSize);
-    Page<Comment> getCommentPage(int pageNumber, int pageSize);
+    PageOfItems<Comment> getAllComment(int postId, int pageNumber, int pageSize);
+    Page<Comment> getCommentPage(int postId, int pageNumber, int pageSize);
     Object addComment(Comment comment);
 }

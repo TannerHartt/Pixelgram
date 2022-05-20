@@ -79,6 +79,7 @@ public class commentServiceTests {
 
     @Test
     public void getCommentTest_positive() {
+        int postId = 1;
         int pageNumber = 0;
         int pageSize = 5;
         List<Comment> commentList = new ArrayList<>();
@@ -89,16 +90,18 @@ public class commentServiceTests {
         commentList.add(comment4);
         commentList.add(comment5);
         commentPage = new PageImpl<Comment>(commentList);
-        when(commentRepo.findAll(PageRequest.of(pageNumber, pageSize))).thenReturn(commentPage);
+        when(commentRepo.findByPostId(postId,PageRequest.of(pageNumber, pageSize))).thenReturn(commentPage);
 
-        Page<Comment> results = commentService.getCommentPage(0,5);
+        Page<Comment> results = commentService.getCommentPage(postId, pageNumber, pageSize);
         Assertions.assertEquals(commentPage.getTotalElements(), results.getTotalElements());
     }
 
     @Test
     public void getAllCommentTest_positive() {
+        int postId = 1;
         int pageNumber = 0;
         int pageSize = 5;
+
         List<Comment> commentList = new ArrayList<>();
         commentList.add(comment);
         commentList.add(comment2);
@@ -106,9 +109,9 @@ public class commentServiceTests {
         commentList.add(comment4);
         commentList.add(comment5);
         commentPage = new PageImpl<Comment>(commentList, pageable, pageSize);
-        Mockito.doReturn(commentPage).when(commentService).getCommentPage(pageNumber, pageSize);
+        Mockito.doReturn(commentPage).when(commentService).getCommentPage(postId, pageNumber, pageSize);
 
-        pageOfItems = commentService.getAllComment(pageNumber, pageSize);
+        pageOfItems = commentService.getAllComment(postId, pageNumber, pageSize);
 
         Assertions.assertEquals(pageOfItems.getTotalElements(), 5);
         Assertions.assertEquals(pageOfItems.isHasNext(), false);
