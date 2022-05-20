@@ -65,7 +65,7 @@ describe('PostServiceService', () => {
     let pageNumber = 0
     let pageSize = 0
 
-    service.fetchPagedPosts(post,pageNumber,pageSize).subscribe((result) => {
+    service.fetchPagedPosts(post, pageNumber, pageSize).subscribe((result) => {
       expect(result.totalElements).toBe(0)
     })
 
