@@ -2,128 +2,22 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <title>Posts</title>
 </head>
-<style>
-    /* Profile Section */
-  /* style DELETE POST FEATURE HERE */
-  
-      .post-img {
-          width: 600px;
-          height: 605px;
-          display: block;
-          margin: auto;
-      }
-      .post-container {
-        height: 828px;
-        width: 616px;
-        display: block;
-        margin:auto;
-        box-sizing:border-box;
-        border-radius: 1px solid grey;
-      }
-      .UserProfileContainer {
-          height: 60px;
-          width: 600px;
-      }
-  * {
-    margin: 0;
-    padding: 0;
-  }
-      .description-container{
-        width: 600px;
-        height: 154px;
-        background-color: rgb(255, 255, 255);
-        margin: auto;
-      }
-      .likes-comments{
-        width: 600px;
-        height: 20px;
-        background-color: antiquewhite;
-        margin-top: 15px;
-      }
-      .heart{
-        background-color: white;
-        margin-left: 18px;
-        margin-top: 15px;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        color: rgba(38, 38, 38, 1);
-        position: relative;
-        top: 10px;
-      }
-      .likeCount{
-        width: 50px;
-        height: 18px;
-        background-color: white;
-        margin-left: 4.2px;
-        margin-top: 15px;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        color: rgba(171, 171, 171, 1);
-        position: relative;
-        top: 7px;
-      }
-      .commentCount{
-        width: 90px;
-        height: 18px;
-        margin-left: 8px;
-        margin-top: 15px;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        color: rgba(171, 171, 171, 1);
-        position: relative;
-        top: 7px;
-      }
-      .userTitle{
-        height: 20px;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-weight: 500;
-        font-size: 15px;
-        line-height: 17.5px;
-        color: rgba(38, 38, 38, 1);
-      }
-      .firstLineText{
-        height: 18px;
-        width: 546px;
-        margin-left: 8px;
-        position: relative;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-weight: 400;
-        font-size: 15px;
-        color: rgba(0, 0, 0, 1)
-      }
-      .moreDescription{
-        width: 34px;
-        height: 18px;
-        margin-left: 4px;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-weight: 400;
-        font-size: 15px;
-        color: rgba(171, 171, 171, 1)
-      }
-      .viewMoreComments{
-        width: 142px;
-        height: 18px;
-        margin-left: 18px;
-        margin-top: 6px;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        color: rgba(171, 171, 171, 1);
-        text-decoration: none;
-      }
-      .textContainer{
-        margin-left: 18px;
-        margin-bottom: 6px;
-        margin-top: 13px;
-        margin-right: 40px;
-      }
-  </style>
 
-    <div class="post-container">
-      <img src="https://images.unsplash.com/photo-1611915387288-fd8d2f5f928b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max" alt="" class="post-img">
+    <div class="post-container" *ngFor="let post of postData.items">
+      <div class="user-container">
+        <img class="profileImg" src="https://avatars.githubusercontent.com/u/82592?s=200&v=4?w=200&h=200&fit=crop&crop=faces" alt="" >
+        <a class="username">Tanner {{post.post.id}}</a>
+        <button class="deletePost" type="button">...</button>
+      </div>
+      <img src={{post.post.img}} alt="" class="post-img">
       <div class="description-container">    
         <span class="heart"><em class="ri-heart-3-line ri-xl"></em></span>
         <span class="likeCount">12 likes</span>
         <span class="commentCount">14 comments</span>
       <div class="textContainer">
-          <p><span class="userTitle">Tanner</span>
-            <span class="firstLineText">This is the first line of text  This is the first line of text  This is the first line of text  This is the first line of text</span>
-            <span class="moreDescription">more</span><br>
+          <p><span class="userTitle">Tanner {{post.post.id}}</span>
+            <span class="firstLineText">{{post.post.description}}</span>
+            <span class="moreDescription" *ngIf="post.post.description.length > 10">more</span><br>
           </p>
           </div>
             <span class="viewMoreComments"><a href="#" class="viewMoreComments">View more comments</a></span>
