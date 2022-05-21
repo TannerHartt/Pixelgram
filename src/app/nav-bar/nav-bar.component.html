@@ -1,5 +1,6 @@
   <head>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"/>
     <title>NavBar</title>
   </head>
   
@@ -10,10 +11,23 @@
         <img src="../../assets/Pixelgram.png" alt="" class="Pixelgram">
     </div>
   
-    <input class="searchBar" type="search" placeholder="Search">
     
-        <em class="ri-user-3-line"></em>
+      <div class="searchIcon">
+        <input class="searchBar" type="text" placeholder="Search">
+      </div>
     
-    <button type="button" class="login" (click)="goTo('#')">Login</button>
+    
+      <em class="ri-user-3-line ri-2x" id="userIcon"></em>
+    
+    <!-- <button type="button" class="login" (click)="goTo('#')">Login</button> -->
   </header>
   
+
+  <!-- <div class="sb-example-1">
+    <div class="search">
+       <input type="text" class="searchTerm" placeholder="What are you looking for?">
+       <button type="submit" class="searchButton">
+         <i class="fa fa-search"></i>
+      </button>
+    </div>
+ </div> -->

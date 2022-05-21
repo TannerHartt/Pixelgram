@@ -8,8 +8,8 @@
     margin: auto;
 }
 .post-container {
-  height: 828px;
-  width: 616px;
+  height: 821px;
+  width: 601px;
   display: block;
   margin:auto;
   box-sizing:border-box;
@@ -21,10 +21,6 @@
 .UserProfileContainer {
     height: 60px;
     width: 600px;
-}
-* {
-margin: 0;
-padding: 0;
 }
 .description-container{
   width: 600px;
