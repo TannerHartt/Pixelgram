@@ -18,14 +18,10 @@ public class PostController {
     public PostController(PostService postService){
         this.postService = postService;
     }
-
-
+    
     @GetMapping
     public PageOfItems<Post> getPosts(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize) {
         PageOfItems<Post> page = postService.getAllPost(pageNumber, pageSize);
-       /* if (page == null)
-            throw new ResponseStatusException(HttpStatus.NO_CONTENT, "No posts available");
-*/
         return page;
     }
 
