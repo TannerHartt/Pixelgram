@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FeedComponent } from '../feed/feed.component';
 
 @Component({
   selector: 'app-landing-page',

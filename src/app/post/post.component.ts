@@ -14,7 +14,15 @@ export class PostComponent implements OnInit {
 
   User = new User();
   @Input()
-  postData = new PostUI();
+  postData: PostUI = new PostUI();
+  //   post: {id: 5,
+  //     user: new User(),
+  //     img: "banana",
+  //     description: "banana",
+  //     createdOn: new Date(),
+  //     comments: []}, 
+  //     comments: new PageOfItems()
+  //   };
 
   constructor(private postServiceService: PostServiceService) { 
   

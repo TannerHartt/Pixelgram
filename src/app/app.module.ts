@@ -25,6 +25,6 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     NavBarComponent
   ],
   providers: [HttpClientModule],
-  bootstrap: [AppComponent, PostComponent, NavBarComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
