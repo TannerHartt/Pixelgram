@@ -7,11 +7,13 @@ import { UserComponent } from './user/user.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { FeedComponent } from './feed/feed.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
  imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    InfiniteScrollModule
   ],
   declarations: [
     AppComponent,
@@ -19,9 +21,10 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     UserComponent,
     NavBarComponent,
     FeedComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    NavBarComponent
   ],
   providers: [HttpClientModule],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, PostComponent, NavBarComponent]
 })
 export class AppModule { }
