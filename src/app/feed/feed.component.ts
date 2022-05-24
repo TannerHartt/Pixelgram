@@ -12,6 +12,7 @@ export class FeedComponent implements OnInit {
 
     posts!: PostUI[];
     postData = new PageOfItems<PostUI>();
+    comments = new PageOfItems<Comment>();
 
     constructor (private postServiceService: PostServiceService) {}
 
@@ -21,7 +22,7 @@ export class FeedComponent implements OnInit {
     distance: number = .1;
     @Input()
     throttle: number = 300;
-   
+    commentPage = 0;
 
 
     ngOnInit(): void {
@@ -39,6 +40,15 @@ export class FeedComponent implements OnInit {
         console.log(this.postData.items);
     }
 
+
+    showMoreComments(){
+        this.postServiceService.fetchListOfComments(this.postId, ++this.commentPage).subscribe((data: PageOfItems<Comment>) => {
+          this.comments = data;
+          console.log(this.comments.items);
+          this.showComment = data.hasNext;
+          
+        })
+    }
    onScrollDown() {
     this.postServiceService.fetchListOfPosts(this.pageNumber, this.pageSize += 5).subscribe(data =>
         {this.postData = data;});
