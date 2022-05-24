@@ -1,5 +1,5 @@
 import { ThisReceiver } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PageOfItems } from 'src/models/page-of-item';
 import { PostUI } from 'src/models/PostUI';
 import { User } from 'src/models/user';
@@ -13,8 +13,8 @@ import { PostServiceService } from 'src/services/post-service/post-service.servi
 export class PostComponent implements OnInit {
 
   User = new User();
-  postData = new PageOfItems<PostUI>();
-  comments = new PageOfItems<Comment>();
+  @Input()
+  postData: PostUI = new PostUI();
 
   constructor(private postServiceService: PostServiceService) { 
   
@@ -26,7 +26,7 @@ export class PostComponent implements OnInit {
 
   
   ngOnInit(): void {
-    this.getPost();
+   
   }
 
   public getPost() {
