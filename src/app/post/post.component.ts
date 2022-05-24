@@ -14,12 +14,16 @@ export class PostComponent implements OnInit {
 
   User = new User();
   postData = new PageOfItems<PostUI>();
+  comments = new PageOfItems<Comment>();
 
   constructor(private postServiceService: PostServiceService) { 
   
   }
     pageNumber: number = 0;
     pageSize: number = 5;
+    commentPage = 0;
+    showComment = false;
+
   
   ngOnInit(): void {
     this.getPost();
@@ -32,5 +36,15 @@ export class PostComponent implements OnInit {
     });
     
   }
+
+  showMoreComments(){
+    this.postService.fetchListOfComments(this.postId, ++this.commentPage).subscribe((data: PageOfItems<Comment>) => {
+      this.comments = data;
+      console.log(this.comments.items);
+      this.showComment = data.hasNext;
+      
+    })
+  }
+
 
 }

@@ -20,6 +20,6 @@
             <span class="moreDescription" *ngIf="post.post.description.length > 10">more</span><br>
           </p>
           </div>
-            <span class="viewMoreComments"><a href="#" class="viewMoreComments">View more comments</a></span>
+            <span class="viewMoreComments" (click)="showMoreComments()"><a href="#" class="viewMoreComments">View more comments</a></span>
         </div>
       </div>
