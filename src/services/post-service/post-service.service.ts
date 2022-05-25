@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Post } from 'src/models/post';
 import { PageOfItems } from 'src/models/page-of-item';
+import { Comment } from 'src/models/comment';
 
 
 
@@ -19,7 +20,11 @@ export class PostServiceService {
     return this.http.get<PageOfItems<Post>>(`${this.baseURL}?pageNumber=${pageNumber}&pageSize=${pageSize}`);
   }
 
-  fetchPagedPosts(post: Post, pageNumber: number, pageSize: number):Observable<PageOfItems<Post>> {
-    return this.http.get<PageOfItems<Post>>(`${this.baseURL}/${post.id}/comments?pageNumber=${pageNumber}&pageSize=${pageSize}`);
-  } 
+  fetchPagedPosts(post: Post, pageNumber: number, pageSize: number):Observable<Post> {
+    return this.http.get<Post>(`${this.baseURL}/${post.id}/comments?pageNumber=${pageNumber}&pageSize=${pageSize}`);
+  }
+
+  getComments(post: Post, pageNumber: number, pageSize: number):Observable<Comment> {
+    return this.http.get<Comment>(`${this.baseURL}/comments?postId=${post.id}&pageNumber=${pageNumber}&pageSize=${pageSize}`)
+  }
 }
