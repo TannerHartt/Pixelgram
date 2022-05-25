@@ -73,20 +73,20 @@ describe('PostServiceService', () => {
     let pageSize = 0
 
     service.fetchPagedPosts(post, pageNumber, pageSize).subscribe((result) => {
-      expect(result.comments.totalElements).toBe(0)
+      expect(result.totalElements).toBe(0)
     })
 
     req = httpTestingController.expectOne(`http://34.72.139.183/posts/${post.id}/comments?pageNumber=${pageNumber}&pageSize=${pageSize}`)
-    req.flush(post)
+    req.flush(postPage)
   })
 
   it('getComments returns one post comments', () => {
     let req: TestRequest;
-    // let comment: PageOfItems<Comment> = {
-    //   items: [],
-    //   hasNext: false,
-    //   totalElements: 0
-    // }
+    let comment: PageOfItems<Comment> = {
+      items: [],
+      hasNext: false,
+      totalElements: 0
+    }
     let user1: User = {
       id: 0,
       username: " ",
@@ -104,18 +104,11 @@ describe('PostServiceService', () => {
         totalElements: 0
       }
     }
-    let comment: Comment = {
-      id: 0,
-      postId: post.id,
-      username: user1.username,
-      body: " ",
-      createdOn: new Date()
-    }
     let pageNumber = 0
     let pageSize = 0
 
     service.getComments(post, pageNumber, pageSize).subscribe((result) => {
-      expect(result.username).toBe(" ")
+      expect(result.totalElements).toBe(0)
     })
 
     req = httpTestingController.expectOne(`http://34.72.139.183/posts/comments?postId=${post.id}&pageNumber=${pageNumber}&pageSize=${pageSize}`)

@@ -19,9 +19,4 @@ export class CommentComponent implements OnInit {
     //   this.comment! = data
     // })
   }
-
-  // getPost(){
-  //   this.postService.fetchPagedPosts(this.post,).subscribe
-  // }
-
 }
