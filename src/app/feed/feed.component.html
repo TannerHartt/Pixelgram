@@ -1,10 +1,17 @@
-<div class="container full-width">
-  <ul class="list">
-    <li *ngFor="let post of postData.items">
-      <app-post [postData]="post"><!-- Displays the post --></app-post>
-    </li>
-  </ul>
 
+
+<div
+    class= "search-results"
+    infiniteScroll
+    [infiniteScrollDistance]="distance" 
+    [infiniteScrollThrottle]="throttle"
+    (scrolled)="onScrollDown()">
+
+
+
+      <app-post [postData]="post" *ngFor="let post of postData.items"><!-- Displays the post --></app-post>
+    
+ 
   <!-- This is where the scrolling should be implemented
   <button
     id="next"
