@@ -13,10 +13,12 @@ export class CommentComponent implements OnInit {
 
   comment!: PageOfItems<Comment>;
   post!: Post;
+  pageNumber!: number;
+  pageSize!: number;
   constructor(private postService: PostServiceService) { }
   ngOnInit(): void {
-    // this.postService.getComments().subscribe((data: PageOfItems<Comment>) => {
-    //   this.comment! = data
-    // })
+    this.postService.getComments(this.post, this.pageNumber, this.pageSize).subscribe((data: PageOfItems<Comment>) => {
+      this.comment! = data
+    })
   }
 }
