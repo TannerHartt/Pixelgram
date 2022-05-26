@@ -8,6 +8,8 @@ import { EventManager } from '@angular/platform-browser';
 })
 export class LoginFormComponent implements OnInit {
 
+  userField:String = "";
+
   constructor() { }
 
   ngOnInit(): void {
@@ -15,20 +17,19 @@ export class LoginFormComponent implements OnInit {
 
 
   isEmpty: boolean = true;
-  checkInputStatus(): boolean {
+  checkInputStatus(){
     
-    if ( document.getElementById('userN')?.innerText == "") {
-      console.log("Empty")
-     return true; 
-    }
-    if ( document.getElementById('userN')?.innerText !== "") {
-      console.log("Not empty")
-      return true;
-    }
-    return false;
+    
+    
   }
-
-
-
+}
+/*
+<div class="LoginFormInput">              
+<input class="username textInput" name="username" placeholder="Username" [(ngModel)]="username"          
+      (blur)="checkUser()" (keyup)="checkFields()" />            
+  <p class="alert" [hidden]="!usernameError">*Username is required</p>        
+</div>
+*/
+  }
 
 }

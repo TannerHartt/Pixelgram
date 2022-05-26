@@ -11,12 +11,11 @@
         <button><img src="../../assets/images/Pixelgram.png" alt="" class="Pixelgram"></button>
     </div>
   
-    
-      <div class="searchIcon">
+      <div class="searchIcon" *ngIf="router.url === '/'">
         <input class="searchBar" type="text" placeholder="Search">
       </div>
       
-      <em class="ri-user-3-line ri-2x" id="userIcon" (click)="showLoginButton()"></em>
-      <button type="button" class="login" *ngIf="isVisible">{{Login?"Login":"Login"}}</button>
+      <em class="ri-user-3-line ri-2x" id="userIcon" (click)="showLoginButton()" *ngIf="router.url === '/'"></em>
+      <button type="button" class="login" *ngIf="isVisible && router.url === '/'" routerLink="/login" routerLinkActive="active">{{Login?"Login":"Login"}}</button>
 
   </header>

@@ -11,6 +11,7 @@
     top: 50px;
 }
 
+
 .requiredText {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -19,6 +20,8 @@
     line-height: 100%;
     letter-spacing: 0.025em;
     color: #CB5B5B;
+    width: 250px;
+    height: 15px;
 }
 
 #userText {
@@ -40,9 +43,10 @@
     position: absolute;
     top: 77%;
     left: 44px;
-    width: 239px;
-    height: 15px;
 }
+
+
+
   .bar {
     position: absolute;
     left: 46.92%;
@@ -82,7 +86,8 @@
     background: #FAFAFA;
     border: 1px solid #DBDBDB;
     border-radius: 3px;
-    padding: 18px;
+    padding-left: 18px;
+    font-size: 15px;
 }
 
 
@@ -103,6 +108,7 @@ color: #e6e6e6;
     top: 60.39%;
     bottom: 30.36%;
     background: #FAFAFA;
+    font-size: 15px;
 }
 
 .loginSubmit {

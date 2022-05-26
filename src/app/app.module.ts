@@ -10,12 +10,24 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
+const routes: Routes = [
+
+  { path: '', component: LandingPageComponent },
+
+  { path: 'login', component: LoginPageComponent }
+
+];
 
 @NgModule({
  imports: [
     BrowserModule,
     HttpClientModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
   declarations: [
     AppComponent,
