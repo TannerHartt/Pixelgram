@@ -20,6 +20,6 @@ export class PostServiceService {
     return this.http.get<PageOfItems<PostUI>>(`${this.baseURL}?pNum=${pageNumber}&pSize=${pageSize}`);
   }
 
-  getComments(post: PostUI, pageNumber: number, pageSize: number):Observable<PageOfItems<Comment>> {
-    return this.http.get<PageOfItems<Comment>>(`${this.baseURL}/comments?postId=${post}&pageNumber=${pageNumber}&pageSize=${pageSize}`)
+  getComments(postId: number, pageNumber: number, pageSize: number):Observable<PageOfItems<Comment>> {
+    return this.http.get<PageOfItems<Comment>>(`${this.baseURL}/comments?pId=${postId}&pNum=${pageNumber}&pSize=${pageSize}`)
   }}

@@ -8,6 +8,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { FeedComponent } from './feed/feed.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
  imports: [
@@ -22,7 +23,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     NavBarComponent,
     FeedComponent,
     LandingPageComponent,
-    NavBarComponent
+    NavBarComponent,
+    CommentComponent
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]
