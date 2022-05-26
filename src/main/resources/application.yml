@@ -3,6 +3,14 @@ spring:
   application:
     name: capybaras-fems
 
+keycloak:
+  realm: Enablement
+  resource: capybaras
+  auth-server-url: https://enablement-keycloak.work.cognizant.studio/
+  ssl-required: external
+  public-client: true 
+
+
 ---
 # Anything that goes here is made specifically for clouds's profile.
 # Cloud is the default profile that Google Clound Foundry makes your application use if you do not override it.
@@ -24,4 +32,5 @@ spring:
 
 server:
   port:
+
 
