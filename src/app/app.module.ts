@@ -11,6 +11,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -22,7 +23,8 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     InfiniteScrollModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
