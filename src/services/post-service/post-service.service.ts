@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Post } from 'src/models/post';
+import { PostUI } from 'src/models/PostUI';
 import { PageOfItems } from 'src/models/page-of-item';
 import { Comment } from 'src/models/comment';
 
@@ -16,9 +16,10 @@ export class PostServiceService {
 
   constructor(private http: HttpClient) { }
 
-  fetchListOfPosts(pageNumber: number, pageSize: number):Observable<PageOfItems<Post>> {
-    return this.http.get<PageOfItems<Post>>(`${this.baseURL}?pageNumber=${pageNumber}&pageSize=${pageSize}`);
+  fetchListOfPosts(pageNumber: number, pageSize: number):Observable<PageOfItems<PostUI>> {
+    return this.http.get<PageOfItems<PostUI>>(`${this.baseURL}?pNum=${pageNumber}&pSize=${pageSize}`);
   }
+<<<<<<< HEAD
 
   fetchPagedPosts(post: Post, pageNumber: number, pageSize: number):Observable<PageOfItems<Post>> {
     return this.http.get<PageOfItems<Post>>(`${this.baseURL}/${post.id}/comments?pageNumber=${pageNumber}&pageSize=${pageSize}`);
@@ -27,4 +28,6 @@ export class PostServiceService {
   getComments(post: Post, pageNumber: number, pageSize: number):Observable<PageOfItems<Comment>> {
     return this.http.get<PageOfItems<Comment>>(`${this.baseURL}/comments?postId=${post.id}&pageNumber=${pageNumber}&pageSize=${pageSize}`)
   }
+=======
+>>>>>>> develop
 }

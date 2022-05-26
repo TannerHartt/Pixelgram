@@ -14,7 +14,8 @@ describe('PostServiceService', () => {
   // let httpClient: HttpClient;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports:[HttpClientTestingModule]
+      imports:[HttpClientTestingModule],
+      providers:[HttpClientTestingModule]
     });
     service = TestBed.inject(PostServiceService);
     httpTestingController = TestBed.inject(HttpTestingController);
@@ -40,9 +41,10 @@ describe('PostServiceService', () => {
       expect(result.totalElements).toBe(0)
     })
 
-    req = httpTestingController.expectOne(`http://34.72.139.183/posts?pageNumber=${pageNumber}&pageSize=${pageSize}`)
+    req = httpTestingController.expectOne(`http://34.72.139.183/posts?pNum=${pageNumber}&pSize=${pageSize}`)
     req.flush(postPage)
   })
+<<<<<<< HEAD
 
   it('fetchPagePost returns one post', () => {
     let req: TestRequest;
@@ -115,4 +117,6 @@ describe('PostServiceService', () => {
     req.flush(comment)
 
   })
+=======
+>>>>>>> develop
 });
