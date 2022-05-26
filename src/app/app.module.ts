@@ -8,6 +8,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { FeedComponent } from './feed/feed.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 @NgModule({
  imports: [
@@ -22,7 +24,9 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     NavBarComponent,
     FeedComponent,
     LandingPageComponent,
-    NavBarComponent
+    NavBarComponent,
+    LoginPageComponent,
+    LoginFormComponent
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

@@ -1,0 +1,145 @@
+.form-container {
+    width: 616px;
+    height: 587px;
+    box-sizing: border-box;
+    border: 1px solid #e6e6e6;
+    background-color: #ffffff;
+    position: relative;
+    margin: auto;
+    display: block;
+    border-radius: 3px;
+    top: 120px;
+}
+
+.requiredText {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 100%;
+    letter-spacing: 0.025em;
+    color: #CB5B5B;
+}
+
+#userText {
+    position: relative;
+    left: 7.14%;
+    right: 66.88%;
+    top: 55%;
+    bottom: 51.95%;
+}
+
+#passText {
+    position: relative;
+    left: 7.14%;
+    right: 66.88%;
+    top: 69%;
+    bottom: 51.95%;
+}
+#incorrectText {
+    position: relative;
+    top: 385px;
+    left: 44px;
+    width: 239px;
+    height: 15px;
+}
+  .bar {
+    position: absolute;
+    left: 46.92%;
+    right: 52.93%;
+    top: 11.2%;
+    bottom: 81.49%;
+    background: #2A2A2A;
+    height: 45px;
+    width: 1px;
+}
+.logoPic{
+    width: 53px;
+    height: 53px;
+    position: absolute;
+    left: 34.09%;
+    right: 57.31%;
+    top: 10.39%;
+    bottom: 81.01%;
+}
+.login {
+    position: absolute;
+    left: 50.32%;
+    right: 34.25%;
+    top: 11.53%;
+    bottom: 81.01%;
+}
+
+.username {
+    width: 524px;
+    height: 54px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 7.14%;
+    right: 7.79%;
+    top: 44.16%;
+    bottom: 46.59%;
+    background: #FAFAFA;
+    border: 1px solid #DBDBDB;
+    border-radius: 3px;
+    padding: 18px;
+}
+
+.username::placeholder,
+.password::placeholder{
+color: #e6e6e6;
+}
+.password {
+    width: 524px;
+    height: 54px;
+    padding: 18px;
+    box-sizing: border-box;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    position: absolute;
+    box-sizing: border-box;
+    position: absolute;
+    left: 7.14%;
+    right: 7.79%;
+    top: 60.39%;
+    bottom: 30.36%;
+    background: #FAFAFA;
+    border: 1px solid #DBDBDB;
+    border-radius: 3px;
+}
+
+.loginSubmit {
+    width: 118px;
+    height: 45px;
+    position: relative;
+    background: #5197E9;
+    border-radius: 3px;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0.025em;
+    top: 445px;
+    left:  450px;
+    bottom: 97px;
+    right:  48px;
+    cursor: pointer;
+}
+
+.registerSubmit {
+    position: absolute;
+    width: 70px;
+    height: 18px;
+    top: 485px;
+    left: 335px;
+    bottom: 111px;
+    right: 211px;
+    letter-spacing: 0.025em;
+    background-color: #ffffff;
+    border: none;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    cursor: pointer;
+}
+
