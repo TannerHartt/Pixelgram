@@ -24,4 +24,12 @@ spring:
 
 server:
   port:
+---  
+keycloak.realm: Enablement
+keycloak.resource: capybaras
+keycloak.auth-server-url: https://enablement-keycloak.work.cognizant.studio/
+keycloak.ssl-required: external
+keycloak.public-client: true 
+keycloak.grant_type: password
+keycloak.client_id: capybaras
 
