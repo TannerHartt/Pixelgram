@@ -4,6 +4,7 @@ import { PageOfItems } from 'src/models/page-of-item';
 import { PostUI } from 'src/models/PostUI';
 import { User } from 'src/models/user';
 import { PostServiceService } from 'src/services/post-service/post-service.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-post',
