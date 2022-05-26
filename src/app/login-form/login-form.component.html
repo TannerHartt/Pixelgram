@@ -4,11 +4,11 @@
     <div class="bar"></div>
     <img src="../../assets/images/Login.png" alt="" class="login">
     
-    <input type="text" class="username" id="userN" (click)="checkInputStatus()" placeholder="Username...">
-    <p class="requiredText" id="userText" *ngIf="isEmpty">* Username is required</p>
-
-    <input type="text" class="password" placeholder="Password...">
-    <p class="requiredText" id="passText">* Password is required</p>
+    <input type="text" class="username" id="userN" [formControl]="userControl" placeholder="Username">
+    <p class="requiredText" id="userText" *ngIf="userControl.touched && usernameEmpty()">Username required.</p>
+    
+    <input type="text" class="password" [formControl]="passControl" placeholder="Password">
+    <p class="requiredText" id="passText" *ngIf="passControl.touched && passwordEmpty()">Password required.</p>
 
     <button class="loginSubmit" type="submit">Login</button>
     <button class="registerSubmit" type="submit">Register</button>

@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { EventManager } from '@angular/platform-browser';
+import {  FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login-form',
@@ -8,28 +8,32 @@ import { EventManager } from '@angular/platform-browser';
 })
 export class LoginFormComponent implements OnInit {
 
-  userField:String = "";
+  userControl = new FormControl('');
+  passControl = new FormControl('');
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-
-  isEmpty: boolean = true;
-  checkInputStatus(){
-    
-    
-    
+  usernameEmpty(): boolean {
+    try{
+      let user: String = this.userControl.value
+      return user.trim() == ''
+    }
+    catch {
+      return true;
+    }
   }
-}
-/*
-<div class="LoginFormInput">              
-<input class="username textInput" name="username" placeholder="Username" [(ngModel)]="username"          
-      (blur)="checkUser()" (keyup)="checkFields()" />            
-  <p class="alert" [hidden]="!usernameError">*Username is required</p>        
-</div>
-*/
+
+  passwordEmpty(): boolean {
+    try{
+      let pass: String = this.passControl.value
+      return pass.trim() == ''
+    }
+    catch {
+      return true;
+    }
   }
 
 }
