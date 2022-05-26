@@ -11,7 +11,8 @@
   height: 821px;
   width: 601px;
   display: block;
-  margin: 15% auto;
+  margin: 1% auto;
+  margin-bottom: 5%;
   box-sizing:border-box;
   border: 1px solid #E6E6E6;
   position: relative;
