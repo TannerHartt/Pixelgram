@@ -9,7 +9,7 @@ import { FeedComponent } from './feed/feed.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { LoginComponentComponent } from './login-component/login-component.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -35,7 +35,7 @@ const routes: Routes = [
     LandingPageComponent,
     NavBarComponent,
     LoginPageComponent,
-    LoginComponentComponent
+    LoginFormComponent
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
