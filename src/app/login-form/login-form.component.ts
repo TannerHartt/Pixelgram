@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventManager } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login-form',
@@ -11,5 +12,8 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
+  doc = document.getElementById('userN')?.addEventListener('click', (clickEvent: MouseEvent) => {
+    console.log('click event happening!', clickEvent);
+  });
 }
