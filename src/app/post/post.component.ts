@@ -4,7 +4,7 @@ import { PageOfItems } from 'src/models/page-of-item';
 import { PostUI } from 'src/models/PostUI';
 import { User } from 'src/models/user';
 import { PostServiceService } from 'src/services/post-service/post-service.service';
-import { HttpClient } from '@angular/common/http';
+import { Comment } from 'src/models/comment';
 
 @Component({
   selector: 'app-post',
@@ -17,7 +17,8 @@ export class PostComponent implements OnInit {
   @Input()
   postData: PostUI = new PostUI();
   @Input()
-  comments: Comment = new Comment();
+  comments: PageOfItems<Comment> = new PageOfItems<Comment>();
+  
 
   constructor(private postServiceService: PostServiceService) { 
   

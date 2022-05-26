@@ -12,19 +12,26 @@ import { PostServiceService } from 'src/services/post-service/post-service.servi
 })
 export class CommentComponent implements OnInit {
 
-  
-  post: PostUI = new PostUI();
-  comments: PageOfItems<Comment> = {
-    items: [],
-    hasNext: false,
-    totalElements: 0
-  };
+  @Input()
+  postId: number = 0;
+  @Input ()
+  comments: PageOfItems<Comment> = new PageOfItems<Comment>();
   pageNumber: number = 0;
   pageSize: number = 5;
+  showComment = false; 
+
   constructor(private postService: PostServiceService) { }
+  
   ngOnInit(): void {
-    this.postService.getComments(this.post, this.pageNumber, this.pageSize).subscribe((data: PageOfItems<Comment>) => {
-      this.comments! = data;
+    this.postService.getComments(this.postId, this.pageNumber, this.pageSize).subscribe((data: PageOfItems<Comment>) => {
+      this.comments = data;
     })
+  }
+  showMoreComments(){
+    this.postService.getComments(this.postId, this.pageNumber, this.pageSize += 5).subscribe((data) => {
+      this.comments = data;
+      this.showComment = data.hasNext;   
+    })
+
   }
 }

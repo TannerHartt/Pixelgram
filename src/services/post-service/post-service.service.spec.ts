@@ -45,4 +45,26 @@ describe('PostServiceService', () => {
     req = httpTestingController.expectOne(`http://34.72.139.183/posts?pNum=${pageNumber}&pSize=${pageSize}`)
     req.flush(postPage)
   })
+
+  it('getComments returns a page of comments', () => {
+    let req: TestRequest;
+    let commentPage: PageOfItems<Comment> = {
+      items: [],
+      hasNext: false,
+      totalElements: 0
+    }
+
+    let pageNumber = 0
+    let pageSize = 0
+    let postId = 1
+
+    service.getComments(postId,pageNumber,pageSize).subscribe((result) => {
+      expect(result.totalElements).toBe(0)
+    })
+
+    req = httpTestingController.expectOne(`http://34.72.139.183/posts/comments?pId=${postId}&pNum=${pageNumber}&pSize=${pageSize}`)
+    req.flush(commentPage)
+  })
 });
+
+

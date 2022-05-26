@@ -10,7 +10,7 @@ import { PostUI } from 'src/models/PostUI';
 })
 export class FeedComponent implements OnInit {
 
-    posts!: PostUI[];
+    posts = new PostUI();
     postData = new PageOfItems<PostUI>();
     comments = new PageOfItems<Comment>();
 
@@ -40,15 +40,6 @@ export class FeedComponent implements OnInit {
         console.log(this.postData.items);
     }
 
-
-    showMoreComments(){
-        this.postServiceService.fetchListOfComments(this.postId, ++this.commentPage).subscribe((data: PageOfItems<Comment>) => {
-          this.comments = data;
-          console.log(this.comments.items);
-          this.showComment = data.hasNext;
-          
-        })
-    }
    onScrollDown() {
     this.postServiceService.fetchListOfPosts(this.pageNumber, this.pageSize += 5).subscribe(data =>
         {this.postData = data;});
