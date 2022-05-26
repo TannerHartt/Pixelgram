@@ -78,5 +78,7 @@ position: absolute;
   border-radius: 3px;
   left: 75.21%;
   right: 17.71%;
-  top: 69.33%;
+  top: 70%;
+  margin: 3px;
+  cursor: pointer;
 }

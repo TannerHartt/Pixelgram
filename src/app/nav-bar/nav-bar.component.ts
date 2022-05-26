@@ -24,7 +24,7 @@ export class NavBarComponent implements OnInit {
     window.location.reload();
   }
 
-  showLogin() {
+  showLoginButton() {
     this.Login = !this.Login;
     this.isVisible = !this.isVisible;
   }
