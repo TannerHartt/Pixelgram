@@ -6,18 +6,18 @@
   
   <header id="navbarTop">
     <div class="logos_container">
-        <a href="#"><img src="../../assets/images/PixelgramLogo.png" alt="" class="logoPic"></a>
+        <button (click)="refreshPage()"><img src="../../assets/images/PixelgramLogo.png" alt="" class="logoPic"></button>
         <div class="verticalBar"></div>
-        <a href="#"><img src="../../assets/images/Pixelgram.png" alt="" class="Pixelgram"></a>
+        <button (click)="refreshPage()"><img src="../../assets/images/Pixelgram.png" alt="" class="Pixelgram"></button>
     </div>
   
     
       <div class="searchIcon">
         <input class="searchBar" type="text" placeholder="Search">
       </div>
-      <em class="ri-user-3-line ri-2x" id="userIcon"></em>
+      <em class="ri-user-3-line ri-2x" id="userIcon" (click)="showLogin()"></em>
     
-    <!-- <button type="button" class="login" (click)="goTo('#')">Login</button> -->
+    <button type="button" class="login" *ngIf="isVisible">{{Login?"Login":"Login"}}</button>
   </header>
   
 
