@@ -10,7 +10,7 @@
     <input type="text" class="password" [formControl]="passControl" placeholder="Password">
     <p class="requiredText" id="passText" *ngIf="passControl.touched && passwordEmpty()">Password required.</p>
 
-    <button class="loginSubmit" type="submit">Login</button>
+    <app-login-button></app-login-button>
     <button class="registerSubmit" type="submit">Register</button>
     
     <p class="requiredText" id="incorrectText">* Username or Password incorrect</p>
