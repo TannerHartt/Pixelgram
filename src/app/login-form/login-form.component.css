@@ -12,7 +12,7 @@
 }
 
 .requiredText {
-    font-family: 'Roboto';
+    font-family: 'Roboto' sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -98,15 +98,11 @@ color: #e6e6e6;
     border: 1px solid #dbdbdb;
     border-radius: 3px;
     position: absolute;
-    box-sizing: border-box;
-    position: absolute;
     left: 7.14%;
     right: 7.79%;
     top: 60.39%;
     bottom: 30.36%;
     background: #FAFAFA;
-    border: 1px solid #DBDBDB;
-    border-radius: 3px;
 }
 
 .loginSubmit {
