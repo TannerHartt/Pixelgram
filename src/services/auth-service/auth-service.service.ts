@@ -13,6 +13,6 @@ export class AuthServiceService {
   constructor(private http: HttpClient) { }
 
   userLogin(authreq: AuthReq):Observable<AuthResponse> {
-    return this.http.get<AuthResponse>(`${this.baseURL}?username=${authreq.username}&password=${authreq.password}`);
+    return this.http.post<AuthResponse>(`${this.baseURL}`, authreq);
   }
 }

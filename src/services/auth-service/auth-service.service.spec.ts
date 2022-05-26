@@ -43,7 +43,7 @@ describe('AuthServiceService', () => {
       expect(result.expires_in).toBe(1)
     })
 
-    req = httpTestingController.expectOne(`http://34.72.139.183/auth/token?username=${authReq.username}&password=${authReq.password}`);
+    req = httpTestingController.expectOne(`http://34.72.139.183/auth/token`);
     req.flush(authResponse)
   })
 });
