@@ -8,7 +8,7 @@
     margin: auto;
     display: block;
     border-radius: 3px;
-    top: 120px;
+    top: 50px;
 }
 
 .requiredText {
@@ -22,7 +22,7 @@
 }
 
 #userText {
-    position: relative;
+    position: absolute;
     left: 7.14%;
     right: 66.88%;
     top: 55%;
@@ -30,15 +30,15 @@
 }
 
 #passText {
-    position: relative;
+    position: absolute;
     left: 7.14%;
     right: 66.88%;
-    top: 69%;
+    top: 71%;
     bottom: 51.95%;
 }
 #incorrectText {
-    position: relative;
-    top: 385px;
+    position: absolute;
+    top: 77%;
     left: 44px;
     width: 239px;
     height: 15px;
@@ -85,6 +85,7 @@
     padding: 18px;
 }
 
+
 .username::placeholder,
 .password::placeholder{
 color: #e6e6e6;
@@ -130,7 +131,7 @@ color: #e6e6e6;
     position: absolute;
     width: 70px;
     height: 18px;
-    top: 485px;
+    top: 460px;
     left: 335px;
     bottom: 111px;
     right: 211px;

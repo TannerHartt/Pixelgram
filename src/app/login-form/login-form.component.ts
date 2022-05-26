@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { EventManager } from '@angular/platform-browser';
 
 @Component({
@@ -12,8 +12,23 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
-  doc = document.getElementById('userN')?.addEventListener('click', (clickEvent: MouseEvent) => {
-    console.log('click event happening!', clickEvent);
-  });
+
+
+  isEmpty: boolean = true;
+  checkInputStatus(): boolean {
+    
+    if ( document.getElementById('userN')?.innerText == "") {
+      console.log("Empty")
+     return true; 
+    }
+    if ( document.getElementById('userN')?.innerText !== "") {
+      console.log("Not empty")
+      return true;
+    }
+    return false;
+  }
+
+
+
+
 }

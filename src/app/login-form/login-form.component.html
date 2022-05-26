@@ -5,7 +5,7 @@
         <img src="../../assets/images/Login.png" alt="" class="login">
     </div>
     <input type="text" class="username" id="userN" placeholder="Username...">
-    <p class="requiredText" id="userText">* Username is required</p>
+    <p class="requiredText" id="userText" *ngIf="checkInputStatus()">* Username is required</p>
 
     <input type="text" class="password" placeholder="Password...">
     <p class="requiredText" id="passText">* Password is required</p>
