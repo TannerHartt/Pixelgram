@@ -6,10 +6,13 @@ import { PageOfItems } from 'src/models/page-of-item';
 import { Post } from 'src/models/post';
 import { User } from 'src/models/user';
 import { Comment } from 'src/models/comment';
+import { HttpClient } from '@angular/common/http';
+import { PostUI } from 'src/models/PostUI';
 
 describe('PostServiceService', () => {
   let service: PostServiceService;
   let httpTestingController: HttpTestingController;
+  // let httpClient: HttpClient;
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports:[HttpClientTestingModule],
@@ -17,6 +20,7 @@ describe('PostServiceService', () => {
     });
     service = TestBed.inject(PostServiceService);
     httpTestingController = TestBed.inject(HttpTestingController);
+    // httpClient = TestBed.inject(HttpClient);
   });
 
   it('should be created', () => {
@@ -25,7 +29,7 @@ describe('PostServiceService', () => {
 
   it('fetchAllPost returns a page of post', () => {
     let req: TestRequest;
-    let postPage: PageOfItems<Post> = {
+    let postPage: PageOfItems<PostUI> = {
       items: [],
       hasNext: false,
       totalElements: 0
