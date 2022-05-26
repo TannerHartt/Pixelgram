@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root'
 })
 export class AuthServiceService {
-  baseURL: any;
+  private baseURL = "http://34.72.139.183/auth/token";
   
   constructor(private http: HttpClient) { }
 
