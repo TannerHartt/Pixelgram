@@ -7,6 +7,7 @@ import { Post } from 'src/models/post';
 import { User } from 'src/models/user';
 import { Comment } from 'src/models/comment';
 import { HttpClient } from '@angular/common/http';
+import { PostUI } from 'src/models/PostUI';
 
 describe('PostServiceService', () => {
   let service: PostServiceService;
@@ -28,7 +29,7 @@ describe('PostServiceService', () => {
 
   it('fetchAllPost returns a page of post', () => {
     let req: TestRequest;
-    let postPage: PageOfItems<Post> = {
+    let postPage: PageOfItems<PostUI> = {
       items: [],
       hasNext: false,
       totalElements: 0
@@ -44,79 +45,4 @@ describe('PostServiceService', () => {
     req = httpTestingController.expectOne(`http://34.72.139.183/posts?pNum=${pageNumber}&pSize=${pageSize}`)
     req.flush(postPage)
   })
-<<<<<<< HEAD
-
-  it('fetchPagePost returns one post', () => {
-    let req: TestRequest;
-
-    let user1: User = {
-      id: 0,
-      username: " ",
-      profileImg: " "
-    } 
-    let postPage: PageOfItems<Post> = {
-      items: [],
-      hasNext: false,
-      totalElements: 0
-    }
-    let post: Post = {
-      id: 0,
-      user: user1,
-      img: " ",
-      description: " ",
-      createdOn: new Date(),
-      comments: {
-        items: [],
-        hasNext: false,
-        totalElements: 0
-      }
-    }
-    let pageNumber = 0
-    let pageSize = 0
-
-    service.fetchPagedPosts(post, pageNumber, pageSize).subscribe((result) => {
-      expect(result.totalElements).toBe(0)
-    })
-
-    req = httpTestingController.expectOne(`http://34.72.139.183/posts/${post.id}/comments?pageNumber=${pageNumber}&pageSize=${pageSize}`)
-    req.flush(postPage)
-  })
-
-  it('getComments returns one post comments', () => {
-    let req: TestRequest;
-    let comment: PageOfItems<Comment> = {
-      items: [],
-      hasNext: false,
-      totalElements: 0
-    }
-    let user1: User = {
-      id: 0,
-      username: " ",
-      profileImg: " "
-    } 
-    let post: Post = {
-      id: 0,
-      user: user1,
-      img: " ",
-      description: " ",
-      createdOn: new Date(),
-      comments: {
-        items: [],
-        hasNext: false,
-        totalElements: 0
-      }
-    }
-    let pageNumber = 0
-    let pageSize = 0
-
-    service.getComments(post, pageNumber, pageSize).subscribe((result) => {
-      expect(result.totalElements).toBe(0)
-    })
-
-    req = httpTestingController.expectOne(`http://34.72.139.183/posts/comments?postId=${post.id}&pageNumber=${pageNumber}&pageSize=${pageSize}`)
-    req.flush(comment)
-
-  })
-=======
->>>>>>> develop
 });

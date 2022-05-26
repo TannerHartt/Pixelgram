@@ -19,15 +19,7 @@ export class PostServiceService {
   fetchListOfPosts(pageNumber: number, pageSize: number):Observable<PageOfItems<PostUI>> {
     return this.http.get<PageOfItems<PostUI>>(`${this.baseURL}?pNum=${pageNumber}&pSize=${pageSize}`);
   }
-<<<<<<< HEAD
 
-  fetchPagedPosts(post: Post, pageNumber: number, pageSize: number):Observable<PageOfItems<Post>> {
-    return this.http.get<PageOfItems<Post>>(`${this.baseURL}/${post.id}/comments?pageNumber=${pageNumber}&pageSize=${pageSize}`);
-  }
-
-  getComments(post: Post, pageNumber: number, pageSize: number):Observable<PageOfItems<Comment>> {
-    return this.http.get<PageOfItems<Comment>>(`${this.baseURL}/comments?postId=${post.id}&pageNumber=${pageNumber}&pageSize=${pageSize}`)
-  }
-=======
->>>>>>> develop
-}
+  getComments(post: PostUI, pageNumber: number, pageSize: number):Observable<PageOfItems<Comment>> {
+    return this.http.get<PageOfItems<Comment>>(`${this.baseURL}/comments?postId=${post}&pageNumber=${pageNumber}&pageSize=${pageSize}`)
+  }}

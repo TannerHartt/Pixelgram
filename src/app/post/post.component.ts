@@ -18,20 +18,10 @@ export class PostComponent implements OnInit {
   postData: PostUI = new PostUI();
 
   constructor(private postServiceService: PostServiceService) { 
-<<<<<<< HEAD
-  }
-  
-  User = new User();
-  Post = new Post();
-  // getListOfPost(pageNumber: number, pageSize: number){
-  //   this.postServiceService.fetchListOfPosts(pageNumber, pageSize).subscribe()
-  // }
-=======
   
   }
     pageNumber: number = 0;
     pageSize: number = 5;
->>>>>>> develop
   
   ngOnInit(): void {
    
