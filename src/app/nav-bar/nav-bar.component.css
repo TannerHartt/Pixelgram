@@ -18,11 +18,19 @@ body {
 .searchBar {
   box-sizing: border-box;
   border-radius: 3px;
-  left: 45%;
   position: absolute;
   border: 1px solid #DBDBDB;
   text-align: center;
-  top: 2rem;
+  left: 42.95%;
+  right: 42.44%;
+  top: 30.68%;
+  bottom: 31.83%;
+  width: 210px;
+  height: 28px;
+  background-color: #FAFAFA;
+}
+.searchBar::placeholder {
+  color: #999999;
 }
 .logoPic {
   height: 29px;
