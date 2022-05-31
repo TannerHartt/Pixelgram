@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,19 +8,27 @@ import { Router } from '@angular/router';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  @ViewChild('login')
+  login!: ElementRef;
+  Login: boolean = true;
+  isVisible: boolean = false;
+
+
+  constructor(public router: Router, private renderer: Renderer2) { 
+    this.renderer.listen('window', 'click', (event:Event) => {
+      if (event.target !== this.login.nativeElement) {
+        this.isVisible = false;
+      }
+    })
+  }
   
   ngOnInit(): void {
   }
 
-  Login: boolean = true;
-  isVisible: boolean = false;
+ 
 
-  goTo(url: any) {
-    window.location.href = url;
-  }
 
-  showLoginButton() {
+  toggleLoginButton() {
     this.Login = !this.Login;
     this.isVisible = !this.isVisible;
   }
