@@ -16,24 +16,40 @@ export class PostComponent implements OnInit {
   User = new User();
   @Input()
   postData: PostUI = new PostUI();
-  @Input()
-  comments: PageOfItems<Comment> = new PageOfItems<Comment>();
   
-
-  constructor(private postServiceService: PostServiceService) { 
+  constructor(private postService: PostServiceService) { 
   
   }
-    pageNumber: number = 0;
-    pageSize: number = 5;
+  @Input()
+  commentPage: PageOfItems<Comment> = new PageOfItems<Comment>();
+  pageNumber: number = 0;
+  pageSize: number = 5;
+  showComment = false;
+  commentButton:boolean = false;
     
-
-  
   ngOnInit(): void {
    
   }
-    
-}
 
+  showMoreComments(){
+    //++ before pageNumber to increment it before the function is used
+    this.postService.getComments(this.postData.post.id, ++this.pageNumber, this.pageSize).subscribe(data => {
+      this.showComment = data.hasNext; 
+      if(this.commentPage.hasNext){
+        //apending comments to the comment page
+        this.commentPage.items = [...this.commentPage.items, ...data.items]
+        this.commentButton = true;
+      } else{
+        this.commentButton = false;
+      }  
+    });
+  }
+
+  showLessComments(){
+    this.postService.getComments(this.postData.post.id, this.pageNumber, this.pageSize).subscribe(data => {
+      this.commentPage.items = data.items});
+  }
+}
   
   
 
