@@ -75,6 +75,7 @@ position: absolute;
   right: 17%;
   top: 31%;
   bottom: 31%;
+  cursor: pointer;
 }
 .login {
   height: 50px;
