@@ -7,7 +7,7 @@ import com.cognizant.capybarasfems.Services.CommentService;
 import com.cognizant.capybarasfems.Services.PostUIService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+//
 @CrossOrigin(origins = "${ui.UI_URL}", allowCredentials = "true")
 @RestController
 @RequestMapping("/")
