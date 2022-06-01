@@ -10,6 +10,7 @@ export class LoginFormComponent implements OnInit {
 
   userControl = new FormControl('');
   passControl = new FormControl('');
+  isValid: boolean = false;
 
   constructor() { }
 

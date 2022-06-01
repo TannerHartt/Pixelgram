@@ -12,5 +12,5 @@
 
     <app-login-button></app-login-button>
     <button class="registerSubmit" type="submit">Register</button>
-    <p class="requiredText" id="incorrectText">* Username or Password incorrect</p>
+    <p class="requiredText" id="incorrectText" *ngIf="isValid">* Username or Password incorrect</p>
 </div>
